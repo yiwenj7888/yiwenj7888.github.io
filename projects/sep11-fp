@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title class="owner-name">#</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" /> 
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand owner-name" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="github" target="_blank">Github</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html#projects">Projects</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- First Container -->
+    <div class="container-fluid bg-1">
+        <div class="container">
+
+            <h1 class="margin text-center">Freedom Project</h1>
+            <h2>Context</h2>
+            <p>My freedom project was a year-long project where I was tasked to choose a third-party JavaScript tool and use it to build something of my own choice.</p>
+            <p>I chose Phaser 3, a game development library, and decided to make an educational cooking game centered around Chinese dumplings.</p>     
+            <p>The idea was to combine something I grew up eating but never really knew how to make with a format that actually made the information stick: a game.</p>
+            <h2>Content</h2>
+            <p>I made Dumpling Kitchen, a Phaser 3 game where the player clicks through 8 ingredients in a dumpling recipe one by one. Each click turns the ingredient circle green, updates a fun fact at the bottom of the screen, crosses off the step in a checklist on the right side of the page, and updates the message on the cutting board in the middle.</p>
+            <p>Once all 8 ingredients are clicked, a win screen appears with a Play Again button that fully resets the game.</p>
+            <p>The game is split across three files: index.html sets up the page structure, style.css handles the checklist sidebar, and main.js contains all the Phaser code. All 8 ingredients are stored in one array and a single makeButton function handles all of them through a loop, rather than writing separate code for each one. The project used this.add.graphics() for the cutting board, setinteractive() for the ingredient buttons, and scene.time.delayedCall( for the win screen timing.</p>
+          
+               
+            <h2>Reflection</h2>
+           
+          
+            <h4>Challenges</h4>
+            <p>My project had two main challenges: one with the code, and one with how I planned the project overall.</p>
+            <p>The first challenge was getting a single click to trigger multiple things at once. When a player clicks an ingredient, it has to turn the circle green, swap the emoji to a tick, update two Phaser text objects, and cross off the HTML checklist item on the right side, all from one pointerdown event. The tricky part was that Phaser controls the canvas but the checklist is plain HTML, so one click had to cross two completely different systems. I also ran into a double-click bug early on where clicking the same circle twice broke the done counter. Both got fixed once I understood that setting circle.input.enabled = false immediately on the first click stops anything from firing twice, and that a single click handler can contain as many lines as needed.</p>
+            <p>The second challenge was time management. Going in I was ambitious and planned three full levels with different recipes for easy, medium, and hard difficulty. I only finished one. The game is complete and fully working, but I never got to the other two levels. Looking back, I should have planned for one thing, done it well, and only added more if time actually allowed for it.</p>
+            
+          
+
+
+            <h4>Takeaways</h4>
+            <p>The biggest thing I learned is that the more ambitious you want to be, the more time you actually need to set aside. I had enough time to build a solid MVP, but there were features I wanted like enforcing ingredient order, a timer, and the second and third recipe levels that I never got to. At the same time, finishing one thing well felt better than rushing through three things half done.</p>
+            <p>I also got a lot more comfortable reading documentation through this project. Phaser's docs don't walk you through anything step by step you read a concept, guess at how it works, test it, and adjust. That felt frustrating at first but it's actually how real developers use docs, and I feel much more confident with that process now than I was at the start of the year.</p>
+            <p>This was particularly important when dealing with the responsive design issues. Instead of getting frustrated, I learned to break down each problem into smaller, more manageable parts and tackle them one by one. Using grid system, I was able to structure the content more effectively, ensuring that everything resized properly on different screen sizes. The grid system made it far easier to create a flexible layout that adjusted automatically to screen sizes.</p><h4>Next steps</h4>
+
+            <h4>Next step</h4>
+            <p>If I were to continue this project, the first thing I'd add is an order requirement so the player has to click ingredients in the correct recipe sequence. Clicking the wrong one would show a red message like "That's not next!" which would make it feel like a real challenge instead of just a clickable checklist. After that I'd add a timer and score, and eventually build out the medium and hard levels with fried rice and spring rolls as I originally planned.</p>
+
+
+          
+            
+            
+
+            <!--EXAMPLE OF PREVIEW LINK-->
+            <a href="https://yiwenj7888.github.io/sep11-freedom-project/">Preview</a><br>
+            <!--EXAMPLE OF GITHUB LINK-->
+            <a href="https://github.com/yiwenj7888/sep11-freedom-project/tree/main">Github</a><br>
+            <!--BLOG ENTRIES LINK-->
+            <a href="https://github.com/yiwenj7888/sep11-freedom-project/blob/main/blog/entry01.md">Blog Entries</a><br>
+          
+            <img src="../img/IMG_8906.jpeg" class="img-fluid project-img">
+
+
+            <div class="row">
+
+                <!--
+                <div class="col-sm-6">
+                    Use this to...
+                </div>
+                <div class="col-sm-6">
+                    ...make two columns
+                </div>
+                -->
+
+            </div>
+
+            <!-- Example code snippet below (uncomment to use) -->
+            <!-- https://github.com/hstatsep/other/blob/main/prism/prism.md#how-to-format-your-code-snippets -->
+            
+            <!--
+            <pre><code class="language-css">
+                h1 {
+                    color: red;
+                }
+            </code></pre>
+            -->
+
+        </div>
+    </div>
+
+
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+        <a href="#" target="_blank" id="fork"><img src="../img/fork.png"></a><br>
+        <a href="https://hstatsep.github.io" target="_blank"><img src="https://hstatsep.github.io/img/hstatsep-logo-small.png" id="sep"></a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+    <script src="../script.js"></script>
+</body>
+
+</html>
